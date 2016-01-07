@@ -1,2 +1,3 @@
-# Sailsjs-Url-Shortner
-Mucking about. 
+# url
+
+a [Sails](http://sailsjs.org) application
