@@ -80,7 +80,7 @@ module.exports.connections = {
     user: 'YOUR_POSTGRES_USER',
     password: 'YOUR_POSTGRES_PASSWORD',
     database: 'YOUR_POSTGRES_DB'
-  }
+  },
 
 
   /***************************************************************************
@@ -88,5 +88,21 @@ module.exports.connections = {
   * More adapters: https://github.com/balderdashy/sails                      *
   *                                                                          *
   ***************************************************************************/
+  sqlitedb: {
+      /**
+       * Database instance type. Specify whether to store the database on disk
+       * or in memory.
+       */
+      adapter: 'waterline-sqlite3', // or 'memory'
 
+      /**
+       * Location of file if type='disk'
+       */
+      filename: '/var/www/db.sqlite',
+
+      /**
+       * Set to true to output SQL queries
+       */
+      debug: false
+  }
 };
