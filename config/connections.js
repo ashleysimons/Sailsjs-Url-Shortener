@@ -42,10 +42,10 @@ module.exports.connections = {
   ***************************************************************************/
   someMysqlServer: {
     adapter: 'sails-mysql',
-    host: 'YOUR_MYSQL_SERVER_HOSTNAME_OR_IP_ADDRESS',
-    user: 'YOUR_MYSQL_USER',
-    password: 'YOUR_MYSQL_PASSWORD',
-    database: 'YOUR_MYSQL_DB'
+    host: 'localhost',
+    user: 'root',
+    password: '',
+    database: 'shortener'
   },
 
   /***************************************************************************
@@ -88,21 +88,5 @@ module.exports.connections = {
   * More adapters: https://github.com/balderdashy/sails                      *
   *                                                                          *
   ***************************************************************************/
-  sqlitedb: {
-      /**
-       * Database instance type. Specify whether to store the database on disk
-       * or in memory.
-       */
-      adapter: 'waterline-sqlite3', // or 'memory'
 
-      /**
-       * Location of file if type='disk'
-       */
-      filename: '/var/www/db.sqlite',
-
-      /**
-       * Set to true to output SQL queries
-       */
-      debug: false
-  }
 };
