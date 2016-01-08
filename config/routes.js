@@ -45,5 +45,6 @@ module.exports.routes = {
   * for configuration options and examples.                                  *
   *                                                                          *
   ***************************************************************************/
-  'POST /api/v1/url.json': 'UrlController.add'
+  'POST /api/v1/url.json': 'UrlController.add',
+  'GET /api/v1/url/:id.json': 'UrlController.find'
 };

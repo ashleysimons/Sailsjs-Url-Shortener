@@ -15,6 +15,15 @@ module.exports = {
                 res.json(200, url);
             }
         });
+    },
+    find: function(req, res){
+        Url.findOne({id:req.param('id')}).exec(function(err, url){
+            if(err){
+                res.json(500, {});
+            } else {
+                res.json(200, url);
+            }
+        });
     }
 };
 
