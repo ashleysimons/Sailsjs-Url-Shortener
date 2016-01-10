@@ -41,4 +41,4 @@ Response:
 ```
 
 #Running Tests
-` node_modules/mocha/bin/mocha test/bootstrap.test.js test/unit/**/*.test.js `
+` $ node_modules/mocha/bin/mocha test/bootstrap.test.js test/unit/**/*.test.js `

@@ -30,6 +30,15 @@ module.exports = {
                 res.json(200, url);
             }
         });
+    },
+    redirect: function(req, res){
+        Url.findOne({token:req.param('token')}).exec(function(err, url){
+            if(url != undefined && url.path != undefined){
+                res.redirect(url.path);
+            } else {
+                res.notFound();
+            }
+        });
     }
 };
 

@@ -46,5 +46,6 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
   'POST /api/v1/url.json': 'UrlController.add',
-  'GET /api/v1/url/:id.json': 'UrlController.find'
+  'GET /api/v1/url/:id.json': 'UrlController.find',
+  'GET /:token': 'UrlController.redirect'
 };
