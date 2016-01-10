@@ -12,6 +12,7 @@ $ vagrant ssh
 $ sudo apt-get install mysql-server // root no password
 $ mysql -u root -e "CREATE DATABASE shortener"
 $ cd /var/www
+$ chmod u+x node_modules/sails/bin/sails.js
 $ node_modules/sails/bin/sails.js lift
 ```
 
@@ -38,3 +39,6 @@ Response:
   "createdAt": "2016-01-08T05:29:52.000Z"
 }
 ```
+
+#Running Tests
+` node_modules/mocha/bin/mocha test/bootstrap.test.js test/unit/**/*.test.js `
