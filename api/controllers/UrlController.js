@@ -8,13 +8,19 @@
 module.exports = {
     add: function (req, res) {
         var newUrl = req.body;
-        Url.create({token: Math.random().toString(36).substring(2, 8), path: newUrl.path}, function(err, url){
-            if(err){
-                res.json(500, {});
-            } else {
-                res.json(200, url);
-            }
-        });
+        ModelUtilService.getUniqueTokenMultipleAttempts()
+            .then(function(token){
+                Url.create({token: token, path: newUrl.path})
+                    .then(function(url){
+                        res.json(200, url);
+                    })
+                    .catch(function(err){
+                        res.json(501, {});
+                    });
+            })
+            .catch(function(err){
+                res.json(502, {'error': err.message });
+            });
     },
     find: function(req, res){
         Url.findOne({id:req.param('id')}).exec(function(err, url){
